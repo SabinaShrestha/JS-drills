@@ -73,4 +73,22 @@ document.getElementById('refresh').addEventListener('click', function(){
 
 })
 
-// ==================
+// ==================  Roll Dice ====================
+
+var dices = []
+document.getElementById('roll').addEventListener('click', function(){
+  var print1_check = document.getElementById('print1').value
+  if (print1_check != ""){
+    dices = []
+    var print1_check = ""
+  }
+  var i = 0
+  while (i < 2){
+    var roll1 = Math.floor(Math.random() * Math.floor(6));
+    var dice = roll1 + 1
+    dices.push(dice)
+    i++
+  }
+  document.getElementById('print1').value = dices
+
+})
