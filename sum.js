@@ -28,6 +28,16 @@ document.getElementById('arr_sum').addEventListener('click', function(){
   document.getElementById('total1').innerHTML = "Total: " + number1
 })
 
+
+
+// ===================  Average of array ==================
+
+document.getElementById('arr_average').addEventListener('click', function(){
+  var ave1 = number1 / num.length
+  document.getElementById('ave').innerHTML = "Average: " + ave1
+})
+
+
 // ================= Fahrenheit to Celsius =============
 
 document.getElementById('to_celsius').addEventListener('click', function(){
