@@ -90,7 +90,7 @@ document.getElementById('roll').addEventListener('click', function(){
   var print1_check = document.getElementById('print1').value
   if (print1_check != ""){
     dices = []
-    var print1_check = ""
+    print1_check = ""
   }
   var i = 0
   while (i < 2){
@@ -101,4 +101,89 @@ document.getElementById('roll').addEventListener('click', function(){
   }
   document.getElementById('print1').value = dices
 
+})
+
+
+// =====================   fizz Buzz FizzBuzz ======================
+
+
+document.getElementById('run_fizbuz').addEventListener('click', run_fizzbuzz())
+function run_fizzbuzz(){
+  var arr100 = []
+  var i = 0
+
+  while (i < 100){
+    var d = i + 1
+    if ((d%3 == 0) && (d%5 == 0)){
+      arr100[i] = "FizzBuzz"
+    }else if (d%3 == 0) {
+      arr100[i] = "Fizz"
+    }else if (d%5 == 0){
+      arr100[i] = "Buzz"
+    }else{
+      arr100[i] = d
+    }
+    i++
+  }
+  document.getElementById('show_fizzbuzz').innerHTML = arr100
+}
+
+// ======================== Facttorial ========================
+
+document.getElementById("run").addEventListener("click", function(){
+var factorial_number = parseInt(document.getElementById("factorial").value)
+
+var factorial_arr = []
+for (var i = 0; i < factorial_number; i++){
+  factorial_arr[i] = i + 1
+}
+
+var f = 0
+var factorial1 = 1
+for (f; f < factorial_arr.length; f++){
+  factorial1 = factorial1 * factorial_arr[f]
+
+}
+
+if (factorial_number != ""){
+  factorial_arr = []
+  factorial_number = ""
+}
+
+document.getElementById("factorial").value = factorial1
+})
+
+
+// ================  Fibonacci Sequance ==================
+
+
+document.getElementById('fibonacci').addEventListener('click', function(){
+  var fin_number = parseInt(document.getElementById('get_fibonacci').value)
+  var i = 0
+  var fibo_sequence = 1
+  var fibo_arr = [0]
+  for (i; i < fin_number; i++){
+    fibo_arr.push(fibo_sequence)
+    fibo_sequence = fibo_arr[i] + fibo_arr[i+1]
+  }
+  document.getElementById('get_fibonacci').value = fibo_arr[i]
+})
+
+// =======================  Roman Numerals  ======================
+
+
+
+document.getElementById('romanclick').addEventListener('click', function(){
+  var number3 = parseInt(document.getElementById('getnumber').value)
+  var roman_arr = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+  var numbers4 = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+  var number5 = ""
+
+  for (var i = 0; i < numbers4.length; i++){
+    while (number3 >= numbers4[i]){
+      number5 += roman_arr[i]
+      number3 = number3 - numbers4[i]
+    }
+  }
+  document.getElementById('getnumber').value = number5
 })
